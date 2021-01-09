@@ -2,6 +2,7 @@ import http from "http"
 import path from "path"
 import express from "express"
 
+//change to desired local port
 const port: number = 8080
 
 class App {
@@ -11,6 +12,8 @@ class App {
     constructor(port: number) {
         this.port = port
         const app = express()
+
+        //serve client folder
         app.use(express.static(path.join(__dirname, '../client')))
 
         //serve three.js modules
